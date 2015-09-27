@@ -4,5 +4,5 @@ import java.util.ArrayList;
 
 public interface ITopicoManager {
     
-    ArrayList<Mensagem> getMensagens(int topico_id);
+    ArrayList<Topico> getTopico(int id_assunto);
 }

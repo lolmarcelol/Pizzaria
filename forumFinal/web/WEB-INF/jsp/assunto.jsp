@@ -1,3 +1,6 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="java.util.List"%>
+<%@page import="forum.model.Assunto"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,36 +10,32 @@
         <title>Tópicos</title>
     </head>
     <body>
-        <br><br><br>
-        
         <table>
             <tr>
                 <th>
                     Assuntos
                 </th>
                 <th>
-                    Tópicos
+                    qntTópicos
                 </th>
                 <th>
-                    Mensagens
+                    qntMensagens
                 </th>
                 <th>
                     Ultima Mensagem
                 </th>
             </tr>
-			<!-- foreach para cada topico -->
+            <c:forEach var="assunto" items="${assuntos}">
             <tr>
-                <td><h4>Assunto1</td>
+                <td><a href="topico?id=${assunto.id}"><p> ${assunto.nome}</p></a></td>
                 <td><h4>123123</h4></td>
-                <td>
-                    <h4>1231231</h4>
-                </td>
+                <td><h4>1231231</h4></td>
                 <td width="200">
                     <p>(dd/mm/YYYY) <a href="#" >link</a></p>
                     <p>Por: usuario</p>
                 </td>
             </tr>
-            <!-- fim do foreach -->
+            </c:forEach>
         </table>
     </body>
 </html>

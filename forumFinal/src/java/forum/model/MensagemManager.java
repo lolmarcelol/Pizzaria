@@ -2,21 +2,21 @@ package forum.model;
 
 import forum.dao.IDaoManager;
 import forum.dao.JdbcDaoManager;
-import forum.dao.TopicoDAO;
+import forum.dao.MensagemDAO;
 import java.util.ArrayList;
 
-public class TopicoManager implements ITopicoManager {
+public class MensagemManager implements IMensagemManager {
 
     @Override
-    public ArrayList<Topico> getTopico(int assunto_id) {
+    public ArrayList<Mensagem> getMensagem(int topico_id) {
        IDaoManager manager;
        manager = new JdbcDaoManager();
        
        try{
            manager.iniciar();
-           TopicoDAO dao = manager.getTopicoDao();
-           ArrayList<Topico> alist;
-           alist = dao.getTopico(assunto_id);
+           MensagemDAO dao = manager.getMensagemDao();
+           ArrayList<Mensagem> alist;
+           alist = dao.getMensagem(topico_id);
            manager.confirmarTransação();
            manager.encerrar();
            return alist;
@@ -24,6 +24,6 @@ public class TopicoManager implements ITopicoManager {
            manager.abortarTransação();
            throw ex;
        } 
-    }
     
+    }
 }

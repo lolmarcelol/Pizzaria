@@ -1,4 +1,6 @@
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="java.util.List"%>
+<%@page import="forum.model.Topico"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,34 +23,24 @@
                     Qnt resposta
                 </th>
                 <th>
-                    Nota
+                Numero de acessos
                 </th>
-				<th>
-				Numero de acessos
-				</th>
-				<th>
-				Ultima msg
-				</th>
+                <th>
+                Ultima msg
+                </th>
             </tr>
-			<!-- foreach para cada topico -->
+            <c:forEach var="topico" items="${topicos}">
             <tr>
-                <td><h4>Nome tópico </h4></td>
-                <td><h4>usuario</h4></td>
-                <td>
-                    <h4>1231231</h4>
-                </td>
-				<td>
-				<h4>1230</h4>
-				</td>
-				<td><h4>
-					300
-				</h4></td>
+                <td><a href="mensagem?id=${topico.id}"><h4> ${topico.nome}</h4></a></td>
+                <td><h4>${topico.criado_por}</h4></td>
+                <td><h4>1231231</h4></td> <!-- qnt de resposta -->
+                <td><h4>${topico.acessos}</h4></td>
                 <td width="200">
                     <p>(data) <a href="#" >link</a></p>
                     <p>Por: viadaoaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
                 </td>
             </tr>
-            <!-- fim do foreach -->
+            </c:forEach>
         </table>
     </body>
 </html>

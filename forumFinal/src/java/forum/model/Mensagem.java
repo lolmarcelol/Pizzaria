@@ -4,12 +4,22 @@ import java.util.Date;
 
 public class Mensagem {
     private int id;
+    private int topico_id;
+
+  
     private Date data;
     private String text;
     private String usuario;
-
+    
     public Mensagem(){
         
+    }
+  public int getTopico_id() {
+        return topico_id;
+    }
+
+    public void setTopico_id(int topico_id) {
+        this.topico_id = topico_id;
     }
     
     public int getId() {

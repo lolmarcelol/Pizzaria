@@ -1,11 +1,9 @@
 package forum.dao;
 
-import forum.model.Topico;
+import forum.model.Assunto;
 import java.util.ArrayList;
 
 public interface AssuntoDAO {
-    
-        ArrayList<Topico> getTopicos(int assunto_id);
-
-    
+        public ArrayList<Assunto> getAssunto();
+        
 }
