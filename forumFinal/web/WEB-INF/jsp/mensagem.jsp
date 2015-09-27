@@ -18,23 +18,26 @@
     <body>
     <c:forEach var="mensagem" items="${mensagens}">
         <div>
-            <div style="background-color:#33ffff;" class="center">
+            <div style="background-color:#33ffff;border:solid;" class="center">
                 <h4>
                 ${mensagem.usuario}
                 </h4>
                 <p>
                 ${mensagem.data}
                 </p>
-                <textarea>${mensagem.text}</textarea>
+                <p>${mensagem.text}</p>
             </div>
         </div>
     </c:forEach>
         <div style="background-color:#ccffff;" class="center">
+            <form method="POST">
             <p> Deseja responder? digite a baixo sua mensagem </p>
             <textarea type="text" name='text'></textarea>
-            <button> responder </button>
             <p> Digite um username </p>
             <input type='text' name='usuario'/>
+            <br><br><input type="submit" value="Responder"/>
+            <input type="hidden" name="id" value="${mensagens[0].topico_id}"/>
+            </form>
         </div>
     </body>
 </html>

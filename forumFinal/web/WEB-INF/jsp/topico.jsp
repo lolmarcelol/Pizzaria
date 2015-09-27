@@ -33,11 +33,11 @@
             <tr>
                 <td><a href="mensagem?id=${topico.id}"><h4> ${topico.nome}</h4></a></td>
                 <td><h4>${topico.criado_por}</h4></td>
-                <td><h4>1231231</h4></td> <!-- qnt de resposta -->
+                <td><h4>${topico.qntMensagem}</h4></td>
                 <td><h4>${topico.acessos}</h4></td>
                 <td width="200">
-                    <p>(data) <a href="#" >link</a></p>
-                    <p>Por: viadaoaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                    <p>(${mensagem.data}) <a href="mensagem?id=${topico.id}">link</a></p> <!-- Problema, pois eles só faz 1x e seta os dois...  -->
+                    <p>Por: ${mensagem.usuario}</p>
                 </td>
             </tr>
             </c:forEach>

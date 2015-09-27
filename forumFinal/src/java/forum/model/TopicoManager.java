@@ -25,5 +25,22 @@ public class TopicoManager implements ITopicoManager {
            throw ex;
        } 
     }
+
+    @Override
+    public void incrementaAcesso(int id_topico) {
+       IDaoManager manager;
+       manager = new JdbcDaoManager();
+       
+       try{
+           manager.iniciar();
+           TopicoDAO dao = manager.getTopicoDao();
+           dao.incrementaAcesso(id_topico);
+           manager.confirmarTransação();
+           manager.encerrar();
+       }catch(Exception ex){
+           manager.abortarTransação();
+           throw ex;
+       } 
+    }
     
 }

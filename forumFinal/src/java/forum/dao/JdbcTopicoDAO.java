@@ -19,7 +19,7 @@ public class JdbcTopicoDAO implements TopicoDAO {
     public ArrayList<Topico> getTopico(int assunto_id) {
         try{
             ArrayList<Topico> topicos = new ArrayList(1);
-            String query = "SELECT nome,id,acessos,criado_por FROM topicos where assuntos_id = " + assunto_id;
+            String query = "SELECT nome,id,acessos,criado_por,qntMensagem FROM topicos where assuntos_id = " + assunto_id;
             Statement st = conexão.createStatement();
             ResultSet rs = st.executeQuery(query);
            
@@ -30,6 +30,8 @@ public class JdbcTopicoDAO implements TopicoDAO {
             topicodb.setNome(rs.getString("nome"));
             topicodb.setAcessos(rs.getInt("acessos"));
             topicodb.setCriado_por(rs.getString("criado_por"));
+            topicodb.setQntMensagem(rs.getInt("qntMensagem"));
+
             topicos.add(topicodb);
             }
 
@@ -39,5 +41,21 @@ public class JdbcTopicoDAO implements TopicoDAO {
             
         }
     }
+
+    @Override
+    public void incrementaAcesso(int topico_id) {
+         try{
+            ArrayList<Topico> topicos = new ArrayList(1);
+            String query = "UPDATE topicos  SET acessos = acessos + 1  WHERE id =" + topico_id;
+            Statement st = conexão.createStatement();
+            st.executeUpdate(query);
+           
+        } catch(Exception ex){
+            throw new DaoException(ex.getMessage());
+            
+        }
+        
+    }
+
     
 }

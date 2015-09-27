@@ -1,7 +1,10 @@
 
 package forum.controller;
 
+import forum.model.IMensagemManager;
 import forum.model.ITopicoManager;
+import forum.model.Mensagem;
+import forum.model.MensagemManager;
 import forum.model.Topico;
 import forum.model.TopicoManager;
 import java.io.IOException;
@@ -17,6 +20,7 @@ public class TopicoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int id;
+        Mensagem mensagem;
         String idParam;
         idParam = request.getParameter("id");
         id = Integer.parseInt(idParam);
@@ -25,7 +29,11 @@ public class TopicoServlet extends HttpServlet {
         ITopicoManager manager;
         manager = new TopicoManager();
         topicos = manager.getTopico(id);
+        IMensagemManager Mmanager;
+        Mmanager = new MensagemManager();
+        mensagem = Mmanager.getLastMsgById(id);
         request.setAttribute("topicos",topicos);
+        request.setAttribute("mensagem", mensagem);
         RequestDispatcher rd;
         rd = request.getRequestDispatcher("/WEB-INF/jsp/topico.jsp");
         rd.forward(request, response);

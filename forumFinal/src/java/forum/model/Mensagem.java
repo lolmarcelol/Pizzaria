@@ -5,8 +5,6 @@ import java.util.Date;
 public class Mensagem {
     private int id;
     private int topico_id;
-
-  
     private Date data;
     private String text;
     private String usuario;

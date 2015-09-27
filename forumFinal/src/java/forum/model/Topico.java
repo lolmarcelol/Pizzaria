@@ -6,9 +6,19 @@ public class Topico {
     private String nome;
     private int assunto_id;
     private String criado_por;
+    private int qntMensagem;
 
+  
     public Topico(){
         
+    }
+    
+    public int getQntMensagem() {
+        return qntMensagem;
+    }
+
+    public void setQntMensagem(int qntMensagem) {
+        this.qntMensagem = qntMensagem;
     }
     
     public int getAssunto_id() {
