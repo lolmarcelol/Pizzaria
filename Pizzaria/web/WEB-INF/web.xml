@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>Assunto</servlet-name>
+        <servlet-class>controller.AssuntoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MensagemServlet</servlet-name>
+        <servlet-class>controller.MensagemServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TopicoServlet</servlet-name>
+        <servlet-class>controller.TopicoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PizzaServlet</servlet-name>
+        <servlet-class>controller.PizzaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Assunto</servlet-name>
+        <url-pattern>/assunto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MensagemServlet</servlet-name>
+        <url-pattern>/mensagem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TopicoServlet</servlet-name>
+        <url-pattern>/topico</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PizzaServlet</servlet-name>
+        <url-pattern>/pizza</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
