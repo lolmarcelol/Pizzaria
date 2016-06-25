@@ -9,11 +9,15 @@
         <title>Criar Pizza</title>
     </head>
     <body>
-        <h1>Daew lesk, escolha as parada da sua pizza !!!</h1>
+        <h1>Daew !!  escolha as parada da sua pizza !!!</h1>
         <form method="POST">
             <input type="radio" name="tamanho" value="medio"> Medio<br>
             <input type="radio" name="tamanho" value="grande"> Grande<br>
             <input type="radio" name="tamanho" value="gigante"> Gigante<br>
+            Tipo da massa
+            <input type="radio" name="massa" value="Normal"> Normal<br>
+            <input type="radio" name="massa" value="Pan"> Pan<br>
+            <input type="radio" name="massa" value="Veggie"> Veggie<br>
             
             <select name="ingrediente0">
                 <option value="-1">Ingrediente</option>

@@ -8,7 +8,6 @@ public interface IDaoManager
     void encerrar();
     void confirmarTransação();
     void abortarTransação();
-    AssuntoDAO getAssuntoDao();
     IngredienteDao getIngredienteDao();
     PizzaDao getPizzaDao();
     ClienteDao getClienteDao();

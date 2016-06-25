@@ -28,6 +28,22 @@ public class PizzaManager implements IPizzaManager {
            throw ex;
        }     }
 
+    @Override
+    public void setPedido(Pizza pizza, Double valor) {
+        IDaoManager manager;
+       manager = new JdbcDaoManager();
+       
+       try{
+           manager.iniciar();
+           PizzaDao dao = manager.getPizzaDao();
+           dao.setPedido(pizza,valor);
+           manager.confirmarTransação();
+           manager.encerrar();
+       }catch(Exception ex){
+           manager.abortarTransação();
+           throw ex;
+       }     }
+
   
     
 }

@@ -2,6 +2,8 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import model.Pizza;
 
@@ -27,10 +29,13 @@ public class JdbcPizzaDao implements PizzaDao{
                 + " VALUES (?,?)";
              PreparedStatement ps;
         try{
-            ps = conexão.prepareStatement(query);
+            ps = conexão.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, pizza.getTipoMassa());
             ps.setString(2, pizza.getTamanho());            
             ps.executeUpdate();
+            ResultSet rs = ps.getGeneratedKeys();
+            rs.next();
+            pizza.setId(rs.getInt(1));
             setPizza(pizza);
         } catch(Exception ex){
             throw new DaoException(ex.getMessage());
@@ -59,5 +64,21 @@ public class JdbcPizzaDao implements PizzaDao{
         }        
     }
 
+    @Override
+    public void setPedido(Pizza pizza, Double valor) {
+                String query = "INSERT INTO pedidos ("
+                + "idPizza,"
+                + "valor,"
+                +"tipoPedido)"
+                + " VALUES ("+pizza.getId() +",?,\"pendente\")";
+             PreparedStatement ps;
+        try{
+            ps = conexão.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
+            ps.setDouble(1, valor);
+            ps.executeUpdate();
+        } catch(Exception ex){
+            throw new DaoException(ex.getMessage());
+            
+        }    }
   
 }

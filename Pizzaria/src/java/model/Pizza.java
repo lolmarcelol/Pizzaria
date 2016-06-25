@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Pizza {
     int id;
-    double valor;
     String tipoMassa;
     ArrayList<Ingrediente> ingredientes; 
     String tamanho;
@@ -23,14 +22,6 @@ public class Pizza {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
     }
 
     public String getTipoMassa() {

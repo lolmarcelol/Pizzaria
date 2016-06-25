@@ -9,7 +9,6 @@ public class JdbcDaoManager implements IDaoManager
 {
     
     Connection conexão;
-    private JdbcAssuntoDAO assuntoDAO;
     private JdbcIngredienteDao ingredienteDao;
     private JdbcPizzaDao pizzaDao;
     private JdbcClienteDao clienteDao;
@@ -69,11 +68,6 @@ public class JdbcDaoManager implements IDaoManager
         }       
     }
     
-
-    @Override
-    public AssuntoDAO getAssuntoDao() {
-        return assuntoDAO;
-    }
     @Override
     public IngredienteDao getIngredienteDao() {
         return ingredienteDao;
