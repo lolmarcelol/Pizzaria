@@ -16,6 +16,10 @@
         <servlet-name>PizzaServlet</servlet-name>
         <servlet-class>controller.PizzaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ClienteServlet</servlet-name>
+        <servlet-class>controller.ClienteServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Assunto</servlet-name>
         <url-pattern>/assunto</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>PizzaServlet</servlet-name>
         <url-pattern>/pizza</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ClienteServlet</servlet-name>
+        <url-pattern>/login  </url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

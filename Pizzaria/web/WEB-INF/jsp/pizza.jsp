@@ -16,7 +16,7 @@
             <input type="radio" name="tamanho" value="gigante"> Gigante<br>
             
             <select name="ingrediente0">
-                <option value="options">Opçoes</option>
+                <option value="-1">Ingrediente</option>
                 <c:forEach var="ingrediente" items="${ingredientes}">
                     <option value="${ingrediente.id}">${ingrediente.nome}</option>
                 </c:forEach>
@@ -24,19 +24,19 @@
             </select>
              
             <select name="ingrediente1">
-                <option value="options">Ingrediente</option>
+                <option value="-1">Ingrediente</option>
                 <c:forEach var="ingrediente" items="${ingredientes}">
                     <option value="${ingrediente.id}">${ingrediente.nome}</option>
                 </c:forEach>
             </select>
             <select name="ingrediente2">
-                <option value="options">Ingrediente</option>
+                <option value="-1">Ingrediente</option>
                 <c:forEach var="ingrediente" items="${ingredientes}">
                     <option value="${ingrediente.id}">${ingrediente.nome}</option>
                 </c:forEach>
             </select>
             <select name="ingrediente3">
-                <option value="options">Ingrediente</option>
+                <option value="-1">Ingrediente</option>
                 <c:forEach var="ingrediente" items="${ingredientes}">
                     <option value="${ingrediente.id}">${ingrediente.nome}</option>
                 </c:forEach>

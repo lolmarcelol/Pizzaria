@@ -6,7 +6,7 @@ public class Usuario {
     String login;
     String senha;
     Endereco endereco;
-
+    String telefone;
     public int getId() {
         return id;
     }

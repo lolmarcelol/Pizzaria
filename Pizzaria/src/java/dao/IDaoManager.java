@@ -11,4 +11,6 @@ public interface IDaoManager
     AssuntoDAO getAssuntoDao();
     IngredienteDao getIngredienteDao();
     PizzaDao getPizzaDao();
+    ClienteDao getClienteDao();
+    
 }

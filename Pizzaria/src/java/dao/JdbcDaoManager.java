@@ -12,6 +12,7 @@ public class JdbcDaoManager implements IDaoManager
     private JdbcAssuntoDAO assuntoDAO;
     private JdbcIngredienteDao ingredienteDao;
     private JdbcPizzaDao pizzaDao;
+    private JdbcClienteDao clienteDao;
     public JdbcDaoManager(){
         
     }
@@ -29,6 +30,7 @@ public class JdbcDaoManager implements IDaoManager
             conexão.setAutoCommit(false);
             ingredienteDao = new JdbcIngredienteDao(conexão);
             pizzaDao = new JdbcPizzaDao(conexão);
+            clienteDao = new JdbcClienteDao(conexão);
             
         }
         catch( Exception ex )
@@ -79,6 +81,11 @@ public class JdbcDaoManager implements IDaoManager
     @Override
     public PizzaDao getPizzaDao() {
         return pizzaDao;
+    }
+
+    @Override
+    public ClienteDao getClienteDao() {
+        return clienteDao;
     }
 
     

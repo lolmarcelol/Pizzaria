@@ -22,16 +22,14 @@ public class JdbcPizzaDao implements PizzaDao{
     public void criarPizza(Pizza pizza) {
 
  String query = "INSERT INTO pizzas ("
-                + "valor,"
                 + "tipoMassa,"
                 + "tamanho)"
-                + " VALUES (?,?,?)";
+                + " VALUES (?,?)";
              PreparedStatement ps;
         try{
             ps = conexão.prepareStatement(query);
-            ps.setDouble(1, pizza.getValor());
-            ps.setString(2, pizza.getTipoMassa());
-            ps.setString(3, pizza.getTamanho());            
+            ps.setString(1, pizza.getTipoMassa());
+            ps.setString(2, pizza.getTamanho());            
             ps.executeUpdate();
             setPizza(pizza);
         } catch(Exception ex){
