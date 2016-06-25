@@ -1,0 +1,6 @@
+BUG NA PARTE DE LOGIN
+
+entrar na url pizzaria/login
+logar como admin, admin
+ao ser redirecionado atualize a pagina para pizzaria/pizza
+obg
